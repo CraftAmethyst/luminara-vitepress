@@ -1,83 +1,48 @@
-# 构建与开发
+# 构建与开发概览
 
-本页只记录源码开发所需的项目约定和 Gradle 入口。服主部署请直接使用 [GitHub Releases](https://github.com/CraftAmethyst/Luminara/releases) 的二进制文件。
+本章节汇总 Luminara 各维护分支的源码构建、平台要求与开发约定。
 
-## 分支矩阵
+::: tip 服主日常部署无需自行构建
+生产部署请直接前往 [GitHub Releases](https://github.com/CraftAmethyst/Luminara/releases) 下载官方发布的预编译 Mod JAR 文件。自行构建仅适用于源码开发、二次定制或前沿特性验证。
+:::
 
-| 分支 | 目标 | 构建环境 |
-| --- | --- | --- |
-| `stable/Trials` | Minecraft `1.20.1` + Forge `47.x` | 64 位 JDK `17` |
-| `stable/FeudalKings` | Minecraft `1.21.1` + NeoForge/Fabric | 64 位 JDK `21` 或 `25` |
+## 分支构建矩阵
 
-两个分支的依赖和 Gradle 任务可能不同。以下命令以当前仓库 `stable/Trials` 为准；开发 FeudalKings 时应切换到该分支并以分支内脚本为准。
+Luminara 采用双分支并行维护策略，两个分支对应不同的 Minecraft 版本、加载器支持与 Java 工具链：
 
-```bash
-git clone https://github.com/CraftAmethyst/Luminara.git
-cd Luminara
-git checkout stable/Trials
-```
+| 分支 | 目标平台 | 支持加载器 | JDK 版本 | 专有构建文档 |
+| --- | --- | --- | --- | --- |
+| **`stable/Trials`** | Minecraft `1.20.1` | Forge `47.x` | 64 位 JDK `17` | [进入 Trials 构建指南](/trials/build) |
+| **`stable/FeudalKings`** | Minecraft `1.21.1` | NeoForge `21.1.x`<br>Fabric `0.16.x`+ | 64 位 JDK `21` / `25` | [进入 FeudalKings 构建指南](/feudalkings/build) |
 
-## Trials 构建
+::: warning 切勿混用分支与产物
+- `Trials` 产物仅适用于 Minecraft 1.20.1 的 Forge 环境。
+- `FeudalKings` 产物仅适用于 Minecraft 1.21.1 的 NeoForge 或 Fabric 环境。
+- 两个分支的 Gradle 插件体系与构建任务不同，请按目标切换至对应分支检出代码并执行对应任务。
+:::
 
-使用 Wrapper 执行发行构建和静态校验：
+## 分支构建入口
 
-```bash
-./gradlew check assembleForgeMod verifyForgeModDistribution
-```
+请根据需要开发的 Minecraft 版本进入对应分支的构建文档：
 
-上述命令在 Linux、macOS、Windows 的 PowerShell、Git Bash 与 WSL 中通用；仅在 cmd.exe 中需要改写为 `gradlew.bat check assembleForgeMod verifyForgeModDistribution`。
+- 🛠️ **[stable/Trials 构建与开发指南](/trials/build)**
+  - 核心任务：`./gradlew check assembleForgeMod verifyForgeModDistribution`
+  - 包含原生 Dedicated Server 冒烟测试（`smokeServer`）与可重现构建验证（`verifyReproducibleForgeMod`）。
+- 🛠️ **[stable/FeudalKings 构建与开发指南](/feudalkings/build)**
+  - 核心任务：`./gradlew check verifyDistributions collect`
+  - 支持分别/同时构建 Fabric Mod（`assembleFabricModDistribution`）与 NeoForge Mod（`assembleNeoForgeModDistribution`）。
+  - 基于 Architectury + Loom 架构，集成 Spigot BuildTools 自动化重映射与 Jar-in-Jar 依赖封装。
 
-产物：
+## 通用开发规范
 
-```text
-build/distributions/luminara-forge-1.20.1-1.0.15-hotfix.jar
-build/distributions/luminara-forge-1.20.1-1.0.15-hotfix.jar.sha256
-```
+无论在哪个分支进行开发，请遵循以下通用项目规范：
 
-Forge 默认解析对应 Minecraft 的 latest promotion。固定版本时传入：
-
-```bash
-./gradlew assembleForgeMod -PforgeVersion=47.4.22
-```
-
-`verifyForgeModDistribution` 会检查 Mod 元数据、Mixin 配置、Manifest 和必要类；发行构建依赖 Git 提交信息。
-
-## 运行验证
-
-```bash
-./gradlew smokeServer
-```
-
-`smokeServer` 会启动干净的 Forge Dedicated Server，并验证 Mod、测试插件、测试 Mod、Bukkit API、命令和版本信息。需要保留测试服务端目录时使用：
-
-```bash
-./gradlew runNativeForgeServer
-```
-
-完整门禁：
-
-```bash
-./gradlew verify
-```
-
-当归档元数据、依赖解析或构建输入发生变化时，补充运行：
-
-```bash
-./gradlew verifyReproducibleForgeMod
-```
-
-## 模块边界
-
-- `arclight-common`：Bukkit/Spigot/Paper 兼容层、Mixin、服务端逻辑。
-- `arclight-forge`：Forge Mod 打包与 Forge 侧集成。
-- `i18n-config`：`luminara.yml`、本地化和版本元数据。
-- `buildSrc`：Gradle 自定义任务与约定。
-
-从 IntelliJ IDEA 打开仓库根目录即可按 `settings.gradle` 导入 Gradle 项目。优先修改源模块或生成器，不要直接编辑 `build/`、缓存文件或 `arclight-common/src/.../remapper/generated/` 下的生成代码。
-
-## 开发约束
-
-- 新行为补充对应模块测试；回归修复至少覆盖触发路径。
-- 保持现有分支的 Minecraft、平台和 CraftBukkit 包版本，不跨分支复制产物。
-- 不提交 `build/`、服务端状态、日志、缓存和 IDE 元数据。
-- Pull Request 说明兼容性影响和实际执行过的 Gradle 命令。
+1. **导入工程**：
+   - 推荐使用 IntelliJ IDEA 打开仓库根目录，由 Gradle 自动导入多模块工程。
+   - 确保 IDE 中配置的 Gradle JVM 和 Project SDK 符合目标分支的 JDK 要求（Trials 为 JDK 17，FeudalKings 为 JDK 21）。
+2. **源码边界**：
+   - 业务逻辑与兼容修改请编写在源码目录中。
+   - 严禁提交 `build/`、`arclight_cache/`、IDE 元数据（`.idea`、`*.iml`）或自动生成的重映射源码。
+3. **质量门禁**：
+   - 为新功能补充单元测试；针对已修复的 Bug 补充回归测试。
+   - 提交 Pull Request 前，请在本地完整运行对应分支的分发打包与契约校验任务，并在 PR 说明中注明实际通过的 Gradle 命令与测试结果。

@@ -29,4 +29,4 @@ description: Luminara stable/Trials 分支服主入口
 Trials 只能使用 Minecraft `1.20.1` 的 Forge 运行环境。Minecraft `1.21.1` 的 NeoForge/Fabric 环境请进入 [stable/FeudalKings](/feudalkings/)。
 :::
 
-公共配置、兼容性和 FAQ 请查看[通用文档](/guide/config)。
+如需从源码编译或参与开发，请参考 [Trials 构建与开发指南](./build)。公共配置、兼容性和 FAQ 请查看[通用文档](/guide/config)。
