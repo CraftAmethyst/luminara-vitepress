@@ -30,14 +30,20 @@ Luminara 的 `optimization` 选项不等于“全部打开就最快”。先保�
 
 ## 小型或中型整合包
 
-如果目标是更激进的性能补丁，可评估下游项目 [PRTS-SERVER](https://github.com/ElainAwa/PRTS-SERVER)。它适合小型到中型整合包；大型整合包优先保留 Luminara 的兼容性路径，避免堆叠多个修改同一调度、区块或实体逻辑的项目。
+如果目标是更激进的性能补丁，可尝试我们的下游项目 [PRTS-SERVER](https://github.com/ElainAwa/PRTS-SERVER)（仅 1.20.1，此项目的 1.21.1 直接基于 Arclight 进行开发，不基于 Luminara）。它适合小型到中型整合包；大型整合包推荐留在 Luminara 。
 
 ## 排查顺序
 
 1. 备份并复制服务端目录。
 2. 暂时移除最近加入的 Mod 或插件，确认问题是否消失。
 3. 检查 `latest.log`、`debug.log`、崩溃报告和 Forge Mod 列表。
-4. 执行 `/luminara info`，核对实际版本矩阵。
-5. 在最小复现环境中逐项加回组件。
+4. 执行 `/luminara info`，核对实际版本信息。
+5. 在最小复现环境中逐项加回 Mod 或插件。
 
-不要把“服务器能启动”当作兼容性验证标准；还要测试进服、加载模组内容、插件命令、世界保存、重启和备份恢复。
+### 最小化测试
+
+找出有问题的 Mod 或插件后，在单独的 Forge 服务端或 Paper 服务端进行测试。
+
+若仍失败，则是 Mod 或插件本体出现问题；若能正常运行，则是 Luminara 的问题，这时请在 [GitHub Issue](https://github.com/CraftAmethyst/Luminara/issues) 提交问题。
+
+不要把“服务器能启动”当作标准，还要看看进服后是否正常。

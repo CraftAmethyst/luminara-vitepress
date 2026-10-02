@@ -23,7 +23,7 @@ git checkout stable/Trials
 
 ## 标准发行构建
 
-使用项目内置的 Gradle Wrapper 执行发行构建与静态契约校验：
+使用项目内置的 Gradle Wrapper 执行发行构建与静态约定校验：
 
 ::: code-group
 
@@ -55,7 +55,7 @@ build/distributions/
 
 ### 构建参数
 
-- **指定 Forge 版本**：默认情况下，构建脚本会通过 Forge Promotions API 自动解析 Minecraft 1.20.1 的 latest promotion 版本。如需锁定特定 Forge 版本，可传入 `-PforgeVersion`：
+- **指定 Forge 版本**：默认情况下，构建脚本会自动获取适用于 Minecraft 1.20.1 的最新 Forge 版本。如需锁定特定 Forge 版本，可传入 `-PforgeVersion`：
 
   ```bash
   ./gradlew assembleForgeMod -PforgeVersion=47.4.22
@@ -69,7 +69,7 @@ build/distributions/
 
 ## 静态校验与门禁
 
-### Mod 契约校验 (`verifyForgeModDistribution`)
+### Mod 约定校验 (`verifyForgeModDistribution`)
 
 `verifyForgeModDistribution` 会在打包完成后解包并对 Mod JAR 进行静态白名单与黑名单检查：
 - 确认包含 `META-INF/mods.toml`、`META-INF/accesstransformer.cfg`、`META-INF/luminara-version.properties` 等元数据。
@@ -128,15 +128,3 @@ Trials 分支包含以下主要模块：
 - **`arclight-forge`**：Forge 平台端实现。负责 Forge 事件总线挂载、Forge 专属 Mixin、平台元数据及 Mod JAR 打包。
 - **`i18n-config`**：配置与国际化系统。负责 `luminara.yml` 读写、版本元数据注入与多语言文本解析。
 - **`buildSrc`**：项目专用的 Gradle 插件与自定义任务（包含 Spigot 生成、重映射、Forge 冒烟测试及打包校验任务）。
-
-## 本地开发指南
-
-1. **导入 IDE**：使用 IntelliJ IDEA 打开仓库根目录，选择通过 `settings.gradle` 导入 Gradle 项目，确认 JDK 设置为 17。
-2. **源码边界**：
-   - 优先在对应子模块的源码目录修改代码。
-   - 切勿直接修改 `build/` 目录以及 `arclight-common/src/.../remapper/generated/` 下自动生成的类。
-3. **提交与 PR 规范**：
-   - 新增功能需提供相应的单元测试或集成测试用例。
-   - 修复 Bug 时应提供能覆盖触发路径的回归验证。
-   - 避免提交 IDE 配置文件（`.idea`、`*.iml`）、本地缓存和构建产物。
-   - 提交 PR 时在说明中附带实际通过的 Gradle 校验命令（例如 `./gradlew verify`）。

@@ -1,10 +1,10 @@
 # `luminara.yml` 配置解读
 
-Luminara 在服务端根目录读取 `luminara.yml`。文件不存在时，启动过程会从 Mod 内置模板生成；已有文件会进行版本迁移并补全本地化注释。当前配置版本是 `_v: 2`，不要手动修改 `_v`。
+Luminara 在服务端根目录读取 `luminara.yml`。文件不存在时，启动过程会自动生成；已有文件会进行版本迁移并补全本地化注释。当前配置版本是 `_v: 2`，不要手动修改 `_v`。
 
-修改配置后重启服务端。配置不是 `server.properties` 的替代品：端口、在线模式、最大玩家数等基础服务器选项仍在 `server.properties` 中。
+修改后请配置后重启服务端。
 
-## 推荐起步配置
+## 默认推荐配置
 
 ```yaml
 _v: 2
@@ -49,15 +49,17 @@ logging:
 
 ## optimization
 
+> 原先这里有一大堆来自 MPEM（月夜性能优化模组）、Paper 的可用优化选项，但是后来把它们全都删掉了，因为极其不稳定且出现性能倒退的情况。优化项并不是越多越好，几个常见的优化模组就可以实现性能提升，详见 [兼容性与性能建议](./compatibility.md)。
+
 | 字段 | 默认值 | 说明 |
 | --- | ---: | --- |
 | `cache-plugin-class` | `true` | 缓存插件类，减少重复加载开销。遇到插件热替换或类加载问题时可临时设为 `false`。 |
 | `goal-selector-update-interval` | `1` | 生物目标选择器更新间隔。增大数值可减少资源消耗，但会让生物更不频繁地改变目标。 |
-| `use-activation-and-tracking-range` | `false` | 使用 Spigot 的激活范围和追踪范围优化。模组服建议先保持关闭，逐项验证后再开启。 |
-
-源码已移除旧版本中不安全的异步世界、持久化和所谓内存优化开关。不要从旧教程复制这些字段；启动时会迁移并删除不再支持的设置。
+| `use-activation-and-tracking-range` | `false` | 使用 Spigot 的激活范围和追踪范围优化。大型模组服建议先保持关闭，酌情开启。 |
 
 ## compatibility
+
+> symlink-world 对于 “匹配 Bukkit 世界名的符号链接” 的解释：形如 world_xxx 就是 Bukkit 的世界名格式。例如 world_the_aether 会被映射至 world/the_aether（因为 Bukkit 不太兼容带有斜杠符号的世界名），此选项主要为了兼容像 Multiverse Core 的多世界插件
 
 | 字段 | 说明 |
 | --- | --- |
@@ -94,10 +96,12 @@ logging:
 4. `velocity.online-mode` 应与 Velocity 的在线模式设置一致。
 5. 排障时可暂时打开 `debug-logging`，正常运行后关闭。
 
-不要只开启后端选项而不配置代理；签名校验失败时玩家会在登录阶段被拒绝。后端端口应只对代理开放，避免绕过代理直接连接。
+不要只开启后端选项而不配置代理。后端端口应只对代理开放，避免绕过代理直接连接。
 
 ## error-handling 与 logging
 
-- `error-handling.continue-on-crash` 默认 `false`。保持关闭能让崩溃尽快暴露，避免服务器处于半损坏状态。
-- `crash-report-directory` 指定崩溃报告目录，默认 `crash-reports`。
-- `logging.use-simple-format` 为 `true` 时隐藏线程名和类名，日志更简洁；排查兼容性问题建议保持 `false`。
+| 字段 | 说明 |
+| --- | --- |
+| `error-handling.continue-on-crash` | 尝试忽略小部分的服务器崩溃。保持关闭能让崩溃尽快暴露，避免服务器处于半损坏状态。 |
+| `crash-report-directory` | 指定崩溃报告目录，默认 `crash-reports`。 |
+| `logging.use-simple-format` | 为 `true` 时 隐藏线程名和类名，日志更简洁；排查兼容性问题建议保持 `false`。 |

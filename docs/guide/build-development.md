@@ -26,23 +26,4 @@ Luminara 采用双分支并行维护策略，两个分支对应不同的 Minecra
 请根据需要开发的 Minecraft 版本进入对应分支的构建文档：
 
 - 🛠️ **[stable/Trials 构建与开发指南](/trials/build)**
-  - 核心任务：`./gradlew check assembleForgeMod verifyForgeModDistribution`
-  - 包含原生 Dedicated Server 冒烟测试（`smokeServer`）与可重现构建验证（`verifyReproducibleForgeMod`）。
 - 🛠️ **[stable/FeudalKings 构建与开发指南](/feudalkings/build)**
-  - 核心任务：`./gradlew check verifyDistributions collect`
-  - 支持分别/同时构建 Fabric Mod（`assembleFabricModDistribution`）与 NeoForge Mod（`assembleNeoForgeModDistribution`）。
-  - 基于 Architectury + Loom 架构，集成 Spigot BuildTools 自动化重映射与 Jar-in-Jar 依赖封装。
-
-## 通用开发规范
-
-无论在哪个分支进行开发，请遵循以下通用项目规范：
-
-1. **导入工程**：
-   - 推荐使用 IntelliJ IDEA 打开仓库根目录，由 Gradle 自动导入多模块工程。
-   - 确保 IDE 中配置的 Gradle JVM 和 Project SDK 符合目标分支的 JDK 要求（Trials 为 JDK 17，FeudalKings 为 JDK 21）。
-2. **源码边界**：
-   - 业务逻辑与兼容修改请编写在源码目录中。
-   - 严禁提交 `build/`、`arclight_cache/`、IDE 元数据（`.idea`、`*.iml`）或自动生成的重映射源码。
-3. **质量门禁**：
-   - 为新功能补充单元测试；针对已修复的 Bug 补充回归测试。
-   - 提交 Pull Request 前，请在本地完整运行对应分支的分发打包与契约校验任务，并在 PR 说明中注明实际通过的 Gradle 命令与测试结果。

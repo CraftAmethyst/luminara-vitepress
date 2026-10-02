@@ -13,13 +13,9 @@
 | Fabric API | `0.115.0` 或更高版本（Fabric 服务端需要） |
 | CraftBukkit 包 | `v1_21_R1` |
 
-::: warning 不要混用分支
-FeudalKings 的 Mod、NeoForge/Fabric 启动器和整合包必须使用 Minecraft 1.21.1。不要把 Trials 的 1.20.1 Forge 产物放进 FeudalKings，也不要把 1.21.1 产物放入 Trials 服务端。
-:::
-
 ## 获取文件
 
-从 [GitHub Releases](https://github.com/CraftAmethyst/Luminara/releases) 下载标注 `stable/FeudalKings`、`1.21.1` 或对应分支的构建产物。发布页可能同时提供 NeoForge 和 Fabric 所需文件，选择与服务端平台匹配的文件，并阅读该 Release 的兼容矩阵。
+从 [GitHub Releases](https://github.com/CraftAmethyst/Luminara/releases) 下载标注 `stable/FeudalKings`、`1.21.1` 或对应分支的构建产物。发布页同时提供 NeoForge 和 Fabric 所需文件，选择与加载器匹配的文件，并阅读该 Release 的兼容矩阵。
 
 如果 Release 附带 SHA-256 文件，部署前校验：
 
