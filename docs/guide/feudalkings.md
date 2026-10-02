@@ -23,16 +23,24 @@ FeudalKings 的 Mod、NeoForge/Fabric 启动器和整合包必须使用 Minecraf
 
 如果 Release 附带 SHA-256 文件，部署前校验：
 
-```powershell
+::: code-group
+
+```bash [Linux / macOS]
+sha256sum luminara-*.jar
+```
+
+```powershell [Windows]
 Get-FileHash .\luminara-*.jar -Algorithm SHA256
 ```
+
+:::
 
 ## NeoForge 服务端
 
 1. 访问 [NeoForge 官网](https://neoforged.net/)，选择 Minecraft `1.21.1`，下载 `21.1.x` Installer。
 2. 在新的空目录执行安装：
 
-   ```powershell
+   ```bash
    java -jar neoforge-21.1.x-installer.jar --installServer
    ```
 

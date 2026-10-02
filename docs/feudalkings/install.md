@@ -6,16 +6,24 @@
 
 从 [GitHub Releases](https://github.com/CraftAmethyst/Luminara/releases) 下载与 `stable/FeudalKings`、Minecraft `1.21.1` 和目标平台匹配的二进制文件。若 Release 提供校验文件，使用以下命令核对：
 
-```powershell
+::: code-group
+
+```bash [Linux / macOS]
+sha256sum luminara-*.jar
+```
+
+```powershell [Windows]
 Get-FileHash .\luminara-*.jar -Algorithm SHA256
 ```
+
+:::
 
 ## 2. NeoForge
 
 1. 在 [NeoForge 官网](https://neoforged.net/)选择 Minecraft `1.21.1`，下载 `21.1.x` Installer，最低为 `21.1.117`。
 2. 在新的服务端目录运行：
 
-   ```powershell
+   ```bash
    java -jar neoforge-21.1.x-installer.jar --installServer
    ```
 

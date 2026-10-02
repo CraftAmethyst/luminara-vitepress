@@ -15,9 +15,17 @@
 
 如果发行页同时提供 SHA-256 校验文件，建议在部署前校验下载文件：
 
-```powershell
+::: code-group
+
+```bash [Linux / macOS]
+sha256sum luminara-forge-*.jar
+```
+
+```powershell [Windows]
 Get-FileHash .\luminara-forge-*.jar -Algorithm SHA256
 ```
+
+:::
 
 校验值必须与 Release 附带的 `.sha256` 文件一致。
 
@@ -25,9 +33,11 @@ Get-FileHash .\luminara-forge-*.jar -Algorithm SHA256
 
 在 Luminara 源码根目录执行：
 
-```powershell
-.\gradlew.bat assembleForgeMod
+```bash
+./gradlew assembleForgeMod
 ```
+
+在 Windows 的 PowerShell、Git Bash 或 WSL 中同样使用 `./gradlew`；只有 cmd.exe 需要改用 `gradlew.bat`。
 
 构建完成后，分发文件位于：
 
@@ -43,7 +53,7 @@ build/distributions/luminara-forge-1.20.1-1.0.15-hotfix.jar.sha256
 1. 从 [Forge 1.20.1 下载页](https://files.minecraftforge.net/net/minecraftforge/forge/index_1.20.1.html)下载 Installer。生产环境建议选择 `47.4.22`，或使用项目支持策略对应的当前 Forge promotion。
 2. 将 Installer 放入新的空目录，在该目录执行：
 
-   ```powershell
+   ```bash
    java -jar forge-1.20.1-47.4.22-installer.jar --installServer
    ```
 

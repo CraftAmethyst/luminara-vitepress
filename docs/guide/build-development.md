@@ -25,11 +25,7 @@ git checkout stable/Trials
 ./gradlew check assembleForgeMod verifyForgeModDistribution
 ```
 
-Windows：
-
-```powershell
-.\gradlew.bat check assembleForgeMod verifyForgeModDistribution
-```
+上述命令在 Linux、macOS、Windows 的 PowerShell、Git Bash 与 WSL 中通用；仅在 cmd.exe 中需要改写为 `gradlew.bat check assembleForgeMod verifyForgeModDistribution`。
 
 产物：
 

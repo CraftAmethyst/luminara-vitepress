@@ -6,15 +6,23 @@
 
 从 [GitHub Releases](https://github.com/CraftAmethyst/Luminara/releases) 下载与 `stable/Trials`、Minecraft `1.20.1` 匹配的 Luminara Mod。若 Release 提供 `.sha256` 文件，部署前执行：
 
-```powershell
+::: code-group
+
+```bash [Linux / macOS]
+sha256sum luminara-*.jar
+```
+
+```powershell [Windows]
 Get-FileHash .\luminara-*.jar -Algorithm SHA256
 ```
+
+:::
 
 ## 2. 安装 Forge
 
 从 [Forge 1.20.1 下载页](https://files.minecraftforge.net/net/minecraftforge/forge/index_1.20.1.html)下载 Installer，在新的服务端目录执行：
 
-```powershell
+```bash
 java -jar forge-1.20.1-47.x.x-installer.jar --installServer
 ```
 
