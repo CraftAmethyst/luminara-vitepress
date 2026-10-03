@@ -1,27 +1,38 @@
 # 兼容性与性能建议
 
-目前，常见的混合端都无法保证任何 Mod 与插件的绝对兼容，Luminara 也是如此。
+你需要知道的几个点：
 
-Luminara 同时加载 Forge 模组和 Bukkit/Spigot 插件，但不是完整 Paper 实现。插件是否可用取决于它使用的 API、对原版行为的假设，以及是否与模组修改冲突。遇到问题时先在只安装 Luminara 的最小环境复现。
+- 任何的混合端都无法保证任何 Mod 与插件的绝对兼容。
 
-只是简单一味的堆砌 **过多的** 优化 Mod 通常无法提升服务器性能，尤其是现在越来越多 AI Slop 的优化 Mod 出现，使我们越来越难以甄别哪些优化 Mod 是有帮助的。 
+- 任何的混合端都优先保证 Mod 兼容性，因为都是原生基于 Forge 服务端叠加的 Bukkit兼容层。
 
-若要最大限度地提升服务器性能，可以往下看 `大型整合包的优化` 部分。
+- Luminara 不是完整 Paper 实现。插件是否可用取决于它使用的 API、对原版行为的假设，以及是否与模组修改冲突。遇到问题时先在只安装 Luminara 的最小环境复现。
+
+- 只是简单一味的堆砌 **过多的** 优化 Mod 通常无法提升服务器性能，尤其是现在越来越多 AI Slop 的优化 Mod 出现，使我们越来越难以甄别哪些优化 Mod 是有帮助的。 
+
+- 若要最大限度地提升服务器性能，可以往下看 `大型整合包的优化` 部分。
 
 ## 已知兼容整合包
 
-当 Luminara 准备发布正式版时，都会选择版本热门整合包进行简单的兼容性测试（开服与进服）。
+当 Luminara 准备发布稳定版时，都会选择版本热门整合包进行简单的兼容性测试（开服与进服）。
 
-当 Luminara 已发布正式版时，会随机挑选热门整合包部署到服务器上进行长期周目（大概 7 天 ~ 1 个月）测试。
+当 Luminara 已发布稳定版时，会随机挑选热门整合包部署到服务器上进行长期周目（大概 7 天 ~ 1 个月）测试。
 
 以下是 Luminara 明确兼容的整合包：
 
-- [All the Mods 10](https://www.curseforge.com/minecraft/modpacks/all-the-mods-10) (1.21.1 NeoForge)
-- [Better MC [FABRIC] BMC3](https://www.curseforge.com/minecraft/modpacks/better-mc-fabric-bmc3) (1.21.1 Fabric)
-- [All the Mods 9](https://www.curseforge.com/minecraft/modpacks/all-the-mods-9) (1.20.1 Forge)
-- [落幕曲 Closing Song](https://www.mcmod.cn/modpack/1133.html) (1.20.1 Forge)
-- [GregTech Odyssey](https://gtodyssey.com/) (1.20.1 Forge)
-- [香草纪元：食旅纪行 VanillaEra: FaresChron](https://www.mcmod.cn/modpack/1095.html) (1.20.1 Forge)
+| 整合包                                                                                         | 版本 / 加载器   | 模组兼容 | 插件兼容 |
+| ---------------------------------------------------------------------------------------------- | --------------- | -------- | -------- |
+| [All the Mods 10](https://www.curseforge.com/minecraft/modpacks/all-the-mods-10)               | 1.21.1 NeoForge | 🟢        | 🟢        |
+| [Better MC [FABRIC] BMC3](https://www.curseforge.com/minecraft/modpacks/better-mc-fabric-bmc3) | 1.21.1 Fabric   | 🟢        | 🟡        |
+| [All the Mods 9](https://www.curseforge.com/minecraft/modpacks/all-the-mods-9)                 | 1.20.1 Forge    | 🟢        | 🟢        |
+| [落幕曲 Closing Song](https://www.mcmod.cn/modpack/1133.html)                                  | 1.20.1 Forge    | 🟢        | 🟢        |
+| [GregTech Odyssey](https://gtodyssey.com/)                                                     | 1.20.1 Forge    | 🟢        | 🔴       |
+| [香草纪元：食旅纪行 VanillaEra: FaresChron](https://www.mcmod.cn/modpack/1095.html)            | 1.20.1 Forge    | 🟢        | 🟡        |
+
+- 🟢 **良好兼容** — 开箱即用，无已知冲突。
+- 🟡 **有限兼容** — 可运行，但需附加条件（手动改配置、小功能缺失）。
+- 🔴 **不兼容** — 存在硬冲突或功能缺失严重。
+- ⚪ **不适用** — 该整合包不兼容大部分插件或所有插件。
 
 如果你所游玩的整合包不在这个列表内，也没关系。因为这只是我们测试过的，你仍然可以尝试用 Luminara 开其他整合包的服务器，遇到了问题去发 Issue 或社区群求助就好。
 
@@ -51,8 +62,8 @@ Luminara 同时加载 Forge 模组和 Bukkit/Spigot 插件，但不是完整 Pap
 
 跑图生成负载较高时，可尝试：
 
- - 对于 1.20.1： [FastNoise](https://modrinth.com/mod/zfastnoise) 与 [FastChunkGen](https://www.curseforge.com/minecraft/mc-mods/fastchunkgen)。
- - 对于 1.21.1：[C2ME-NeoForge](https://modrinth.com/mod/c2me-neoforge) 或 [C2ME-Fabric](https://modrinth.com/mod/c2me-fabric)
+- 对于 1.20.1： [FastNoise](https://modrinth.com/mod/zfastnoise) 与 [FastChunkGen](https://www.curseforge.com/minecraft/mc-mods/fastchunkgen)。
+- 对于 1.21.1：[C2ME-NeoForge](https://modrinth.com/mod/c2me-neoforge) 或 [C2ME-Fabric](https://modrinth.com/mod/c2me-fabric)
 
 ## 小型或中型整合包
 
