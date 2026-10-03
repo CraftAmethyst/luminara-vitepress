@@ -8,6 +8,23 @@ Luminara 同时加载 Forge 模组和 Bukkit/Spigot 插件，但不是完整 Pap
 
 若要最大限度地提升服务器性能，可以往下看 `大型整合包的优化` 部分。
 
+## 已知兼容整合包
+
+当 Luminara 准备发布正式版时，都会选择版本热门整合包进行简单的兼容性测试（开服与进服）。
+
+当 Luminara 已发布正式版时，会随机挑选热门整合包部署到服务器上进行长期周目（大概 7 天 ~ 1 个月）测试。
+
+以下是 Luminara 明确兼容的整合包：
+
+- [All the Mods 10](https://www.curseforge.com/minecraft/modpacks/all-the-mods-10) (1.21.1 NeoForge)
+- [Better MC [FABRIC] BMC3](https://www.curseforge.com/minecraft/modpacks/better-mc-fabric-bmc3) (1.21.1 Fabric)
+- [All the Mods 9](https://www.curseforge.com/minecraft/modpacks/all-the-mods-9) (1.20.1 Forge)
+- [落幕曲 Closing Song](https://www.mcmod.cn/modpack/1133.html) (1.20.1 Forge)
+- [GregTech Odyssey](https://gtodyssey.com/) (1.20.1 Forge)
+- [香草纪元：食旅纪行 VanillaEra: FaresChron](https://www.mcmod.cn/modpack/1095.html) (1.20.1 Forge)
+
+如果你所游玩的整合包不在这个列表内，也没关系。因为这只是我们测试过的，你仍然可以尝试用 Luminara 开其他整合包的服务器，遇到了问题去发 Issue 或社区群求助就好。
+
 ## 已知不兼容模组
 
 - [ServerCore](https://modrinth.com/mod/servercore)：其许多优化来自 Spigot 或 Paper，而 Luminara 已经在 Forge 服务端中提供 Bukkit/Spigot/Paper 兼容层，重复修改同一逻辑可能导致异常或崩溃。
@@ -22,22 +39,28 @@ Luminara 同时加载 Forge 模组和 Bukkit/Spigot 插件，但不是完整 Pap
 
 这不是完整兼容清单。插件作者声称“支持 Paper”并不等于支持 Luminara；请先查看启动日志和插件依赖，再在备份服验证。
 
-## 大型整合包的优化
+## 通用 / 大型整合包的优化
 
-我们将模组数量 `≥300` 的整合包定性为大型整合包
+我们将模组数量 `≥300` 的整合包定性为大型整合包.
 
 对大型整合包，Luminara 只明确兼容以下几个优化 Mod：
 
 - [ModernFix](https://modrinth.com/mod/modernfix)
 - [FerriteCore](https://modrinth.com/mod/ferrite-core)
-- [Radium](https://modrinth.com/mod/radium)
+- [Lithium](https://modrinth.com/mod/lithium) (1.21.1) 或 [Radium](https://modrinth.com/mod/radium) (1.20.1)
 
-跑图生成负载较高时，可尝试 [FastNoise](https://modrinth.com/mod/zfastnoise) 与 [FastChunkGen](https://www.curseforge.com/minecraft/mc-mods/fastchunkgen)。
+跑图生成负载较高时，可尝试：
+
+ - 对于 1.20.1： [FastNoise](https://modrinth.com/mod/zfastnoise) 与 [FastChunkGen](https://www.curseforge.com/minecraft/mc-mods/fastchunkgen)。
+ - 对于 1.21.1：[C2ME-NeoForge](https://modrinth.com/mod/c2me-neoforge) 或 [C2ME-Fabric](https://modrinth.com/mod/c2me-fabric)
+
 ## 小型或中型整合包
 
 我们将模组数量 `≤299` 的整合包定性为中型整合包；模组数量 `≤150` 的定性为小型整合包。
 
 如果目标是更激进的性能补丁，可尝试我们的下游项目 [PRTS-SERVER](https://github.com/ElainAwa/PRTS-SERVER)（仅 1.20.1，此项目的 1.21.1 直接基于 Arclight 进行开发，不基于 Luminara）。它适合小型到中型整合包；大型整合包推荐留在 Luminara 。
+
+如果你希望仍然使用 Luminara，你仍然可以复用 `通用 / 大型整合包的优化` 所提到的几个优化 Mod。
 
 ## 排查顺序
 
