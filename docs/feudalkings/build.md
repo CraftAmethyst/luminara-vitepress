@@ -4,11 +4,11 @@
 
 ## 环境要求
 
-| 项目 | 要求 | 说明 |
-| --- | --- | --- |
-| 操作系统 | Linux / macOS / Windows | 支持 Bash、PowerShell 与 WSL |
-| JDK | 64 位 JDK `21` | 项目使用 Java 21 Toolchain；支持 JDK 21 或 25 |
-| Git | 2.x 或更高 | 发行构建任务依赖 Git 提交元数据 |
+| 项目     | 要求                                                | 说明                                                  |
+| -------- | --------------------------------------------------- | ----------------------------------------------------- |
+| 操作系统 | Linux / macOS / Windows                             | 支持 Bash、PowerShell 与 WSL                          |
+| JDK      | 64 位 JDK `21`                                      | 项目使用 Java 21 Toolchain；支持 JDK 21 或 25         |
+| Git      | 2.x 或更高                                          | 发行构建任务依赖 Git 提交元数据                       |
 | 网络连接 | 能够访问 Fabric / NeoForge / Mojang / Spigot 等仓库 | 首次构建会自动运行 Spigot BuildTools 并拉取多平台依赖 |
 
 ## 获取源码

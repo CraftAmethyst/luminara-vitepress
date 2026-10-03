@@ -11,12 +11,12 @@ This is the Forge branch targeting Minecraft `1.20.1`. Luminara runs as a Forge 
 
 ### Target Environment
 
-| Item | Requirement |
-| --- | --- |
-| Minecraft | `1.20.1` |
-| Forge | `47.x`, production recommended version per current Release notes |
-| Java | 64-bit Java `17` |
-| CraftBukkit | `v1_20_R1` |
+| Item        | Requirement                                                      |
+| ----------- | ---------------------------------------------------------------- |
+| Minecraft   | `1.20.1`                                                         |
+| Forge       | `47.x`, production recommended version per current Release notes |
+| Java        | 64-bit Java `17`                                                 |
+| CraftBukkit | `v1_20_R1`                                                       |
 
 ### Getting Started
 

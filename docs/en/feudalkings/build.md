@@ -4,11 +4,11 @@ This page documents the source code build, testing, and development specificatio
 
 ## Environment Requirements
 
-| Item | Requirement | Note |
-| --- | --- | --- |
-| Operating System | Linux / macOS / Windows | Supports Bash, PowerShell, and WSL |
-| JDK | 64-bit JDK `21` | Project uses Java 21 Toolchain; supports JDK 21 or 25 |
-| Git | 2.x or higher | Release build tasks rely on Git commit metadata |
+| Item               | Requirement                                                | Note                                                                                     |
+| ------------------ | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| Operating System   | Linux / macOS / Windows                                    | Supports Bash, PowerShell, and WSL                                                       |
+| JDK                | 64-bit JDK `21`                                            | Project uses Java 21 Toolchain; supports JDK 21 or 25                                    |
+| Git                | 2.x or higher                                              | Release build tasks rely on Git commit metadata                                          |
 | Network Connection | Access to Fabric / NeoForge / Mojang / Spigot repositories | Initial build runs Spigot BuildTools automatically and pulls multi-platform dependencies |
 
 ## Getting Source Code

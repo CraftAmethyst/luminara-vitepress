@@ -8,7 +8,7 @@
 
 - Luminara 不是完整 Paper 实现。插件是否可用取决于它使用的 API、对原版行为的假设，以及是否与模组修改冲突。遇到问题时先在只安装 Luminara 的最小环境复现。
 
-- 只是简单一味的堆砌 **过多的** 优化 Mod 通常无法提升服务器性能，尤其是现在越来越多 AI Slop 的优化 Mod 出现，使我们越来越难以甄别哪些优化 Mod 是有帮助的。 
+- 只是简单一味的堆砌 **过多的** 优化 Mod 通常无法提升服务器性能，尤其是现在越来越多 AI Slop 的优化 Mod 出现，使我们越来越难以甄别哪些优化 Mod 是有帮助的。
 
 - 若要最大限度地提升服务器性能，可以往下看 `大型整合包的优化` 部分。
 
@@ -22,12 +22,12 @@
 
 | 整合包                                                                                         | 版本 / 加载器   | 模组兼容 | 插件兼容 |
 | ---------------------------------------------------------------------------------------------- | --------------- | -------- | -------- |
-| [All the Mods 10](https://www.curseforge.com/minecraft/modpacks/all-the-mods-10)               | 1.21.1 NeoForge | 🟢        | 🟢        |
-| [Better MC [FABRIC] BMC3](https://www.curseforge.com/minecraft/modpacks/better-mc-fabric-bmc3) | 1.21.1 Fabric   | 🟢        | 🟡        |
-| [All the Mods 9](https://www.curseforge.com/minecraft/modpacks/all-the-mods-9)                 | 1.20.1 Forge    | 🟢        | 🟢        |
-| [落幕曲 Closing Song](https://www.mcmod.cn/modpack/1133.html)                                  | 1.20.1 Forge    | 🟢        | 🟢        |
-| [GregTech Odyssey](https://gtodyssey.com/)                                                     | 1.20.1 Forge    | 🟢        | 🔴       |
-| [香草纪元：食旅纪行 VanillaEra: FaresChron](https://www.mcmod.cn/modpack/1095.html)            | 1.20.1 Forge    | 🟢        | 🟡        |
+| [All the Mods 10](https://www.curseforge.com/minecraft/modpacks/all-the-mods-10)               | 1.21.1 NeoForge | 🟢       | 🟢       |
+| [Better MC [FABRIC] BMC3](https://www.curseforge.com/minecraft/modpacks/better-mc-fabric-bmc3) | 1.21.1 Fabric   | 🟢       | 🟡       |
+| [All the Mods 9](https://www.curseforge.com/minecraft/modpacks/all-the-mods-9)                 | 1.20.1 Forge    | 🟢       | 🟢       |
+| [落幕曲 Closing Song](https://www.mcmod.cn/modpack/1133.html)                                  | 1.20.1 Forge    | 🟢       | 🟢       |
+| [GregTech Odyssey](https://gtodyssey.com/)                                                     | 1.20.1 Forge    | 🟢       | 🔴       |
+| [香草纪元：食旅纪行 VanillaEra: FaresChron](https://www.mcmod.cn/modpack/1095.html)            | 1.20.1 Forge    | 🟢       | 🟡       |
 
 - 🟢 **良好兼容** — 开箱即用，无已知冲突。
 - 🟡 **有限兼容** — 可运行，但需附加条件（手动改配置、小功能缺失）。

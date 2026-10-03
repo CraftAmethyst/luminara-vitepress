@@ -58,6 +58,7 @@ Building requires network access to Maven, Forge, and Gradle dependency reposito
    ```
 
    Replace the filename with your actual downloaded Forge version.
+
 3. Before first startup, create `eula.txt` confirming you have read and agreed to the Minecraft EULA:
 
    ```text

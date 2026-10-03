@@ -58,6 +58,7 @@ build/distributions/luminara-forge-1.20.1-1.0.15-hotfix.jar.sha256
    ```
 
    文件名以实际下载的 Forge 版本为准。
+
 3. 首次启动前创建 `eula.txt`，确认已阅读并同意 Minecraft EULA：
 
    ```text

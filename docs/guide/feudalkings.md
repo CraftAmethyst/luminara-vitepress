@@ -4,14 +4,14 @@
 
 ## 支持矩阵
 
-| 组件 | 要求 |
-| --- | --- |
-| Minecraft | `1.21.1` |
-| Java | `21` 或 `25`，使用 64 位 JVM |
-| NeoForge | `21.1.117` 或更高的 `21.1.x` 版本 |
-| Fabric Loader | `0.16.0` 或更高版本 |
-| Fabric API | `0.115.0` 或更高版本（Fabric 服务端需要） |
-| CraftBukkit 包 | `v1_21_R1` |
+| 组件           | 要求                                      |
+| -------------- | ----------------------------------------- |
+| Minecraft      | `1.21.1`                                  |
+| Java           | `21` 或 `25`，使用 64 位 JVM              |
+| NeoForge       | `21.1.117` 或更高的 `21.1.x` 版本         |
+| Fabric Loader  | `0.16.0` 或更高版本                       |
+| Fabric API     | `0.115.0` 或更高版本（Fabric 服务端需要） |
+| CraftBukkit 包 | `v1_21_R1`                                |
 
 ## 获取文件
 
@@ -41,6 +41,7 @@ Get-FileHash .\luminara-*.jar -Algorithm SHA256
    ```
 
    `21.1.x` 以实际下载文件名为准，最低要求为 `21.1.117`。
+
 3. 创建 `eula.txt` 并写入 `eula=true`。
 4. 将 FeudalKings 对应的 Luminara Mod 与 NeoForge 模组放入 `mods/`；Bukkit/Spigot 插件放入 `plugins/`。
 5. 使用 NeoForge 生成的 `run.bat` 或 `run.sh` 启动，首次启动完成后检查根目录的 `luminara.yml`。

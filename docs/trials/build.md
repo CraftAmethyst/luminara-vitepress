@@ -4,12 +4,12 @@
 
 ## 环境要求
 
-| 项目 | 要求 | 说明 |
-| --- | --- | --- |
-| 操作系统 | Linux / macOS / Windows | 支持 Bash、PowerShell 与 WSL |
-| JDK | 64 位 JDK `17` | 推荐 Eclipse Temurin 17 或 Zulu 17 |
-| Git | 2.x 或更高 | 发行构建任务依赖 Git 提交元数据 |
-| 网络连接 | 能够访问 Maven 仓库与 Forge 服务 | 首次构建需要拉取依赖与 Forge 资产 |
+| 项目     | 要求                             | 说明                               |
+| -------- | -------------------------------- | ---------------------------------- |
+| 操作系统 | Linux / macOS / Windows          | 支持 Bash、PowerShell 与 WSL       |
+| JDK      | 64 位 JDK `17`                   | 推荐 Eclipse Temurin 17 或 Zulu 17 |
+| Git      | 2.x 或更高                       | 发行构建任务依赖 Git 提交元数据    |
+| 网络连接 | 能够访问 Maven 仓库与 Forge 服务 | 首次构建需要拉取依赖与 Forge 资产  |
 
 ## 获取源码
 
@@ -72,6 +72,7 @@ build/distributions/
 ### Mod 约定校验 (`verifyForgeModDistribution`)
 
 `verifyForgeModDistribution` 会在打包完成后解包并对 Mod JAR 进行静态白名单与黑名单检查：
+
 - 确认包含 `META-INF/mods.toml`、`META-INF/accesstransformer.cfg`、`META-INF/luminara-version.properties` 等元数据。
 - 确认包含全部核心 Mixin 配置（`mixins.arclight.core.json`、`bukkit.json`、`forge.json`、`compat.json`、`impl.forge.optimization.json`）。
 - 确认 Manifest 包含 `MixinConnector: io.izzel.arclight.common.mod.ArclightConnector`。
@@ -86,6 +87,7 @@ Trials 提供了真实的 Forge 服务端集成冒烟测试：
 ```
 
 `smokeServer` 任务会自动执行以下流程：
+
 1. 下载并安装对应版本的干净 Forge Dedicated Server。
 2. 将构建出的 Luminara Mod 挂载到 `mods/`，并注入专用的测试 Mod（`smokeModJar`）与测试 Bukkit 插件（`smokePluginJar`）。
 3. 启动服务端进程，监听控制台输出并断言关键节点：

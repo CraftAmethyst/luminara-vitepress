@@ -28,10 +28,10 @@ features:
 
 Luminara 是基于 Arclight 开发的混合服务端 Mod。`stable/Trials` 面向 Minecraft `1.20.1`、Forge `47.x`、Java `17`；`stable/FeudalKings` 面向 Minecraft `1.21.1`，支持 NeoForge 和 Fabric。
 
-| 分支 | Minecraft | 服务端平台 | Java | CraftBukkit |
-| --- | --- | --- | --- | --- |
-| `stable/Trials` | `1.20.1` | Forge `47.x` | 17 | `v1_20_R1` |
-| `stable/FeudalKings` | `1.21.1` | NeoForge `21.1.x` 或 Fabric Loader `0.16.x` | 21 / 25 | `v1_21_R1` |
+| 分支                 | Minecraft | 服务端平台                                  | Java    | CraftBukkit |
+| -------------------- | --------- | ------------------------------------------- | ------- | ----------- |
+| `stable/Trials`      | `1.20.1`  | Forge `47.x`                                | 17      | `v1_20_R1`  |
+| `stable/FeudalKings` | `1.21.1`  | NeoForge `21.1.x` 或 Fabric Loader `0.16.x` | 21 / 25 | `v1_21_R1`  |
 
 请选择对应分支入口开始部署：
 

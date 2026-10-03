@@ -11,14 +11,14 @@ description: Luminara stable/FeudalKings 分支服主入口
 
 ### 适用环境
 
-| 项目 | 要求 |
-| --- | --- |
-| Minecraft | `1.21.1` |
-| NeoForge | `21.1.117` 或更高的 `21.1.x` |
-| Fabric Loader | `0.16.0` 或更高 |
-| Fabric API | `0.115.0` 或更高，大多数 Fabric Mod 需要 |
-| Java | 64 位 Java `21` 或 `25` |
-| CraftBukkit | `v1_21_R1` |
+| 项目          | 要求                                     |
+| ------------- | ---------------------------------------- |
+| Minecraft     | `1.21.1`                                 |
+| NeoForge      | `21.1.117` 或更高的 `21.1.x`             |
+| Fabric Loader | `0.16.0` 或更高                          |
+| Fabric API    | `0.115.0` 或更高，大多数 Fabric Mod 需要 |
+| Java          | 64 位 Java `21` 或 `25`                  |
+| CraftBukkit   | `v1_21_R1`                               |
 
 ### 开始部署
 

@@ -11,14 +11,14 @@ This is the branch targeting Minecraft `1.21.1`, supporting both NeoForge and Fa
 
 ### Target Environment
 
-| Item | Requirement |
-| --- | --- |
-| Minecraft | `1.21.1` |
-| NeoForge | `21.1.117` or higher `21.1.x` |
-| Fabric Loader | `0.16.0` or higher |
-| Fabric API | `0.115.0` or higher, required by most Fabric mods |
-| Java | 64-bit Java `21` or `25` |
-| CraftBukkit | `v1_21_R1` |
+| Item          | Requirement                                       |
+| ------------- | ------------------------------------------------- |
+| Minecraft     | `1.21.1`                                          |
+| NeoForge      | `21.1.117` or higher `21.1.x`                     |
+| Fabric Loader | `0.16.0` or higher                                |
+| Fabric API    | `0.115.0` or higher, required by most Fabric mods |
+| Java          | 64-bit Java `21` or `25`                          |
+| CraftBukkit   | `v1_21_R1`                                        |
 
 ### Getting Started
 

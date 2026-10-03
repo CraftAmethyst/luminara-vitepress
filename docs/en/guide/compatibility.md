@@ -20,14 +20,14 @@ Once a stable version of Luminara is released, popular modpacks are randomly cho
 
 The following are modpacks explicitly compatible with Luminara:
 
-| Modpack | Version / Loader | Mod Compatibility | Plugin Compatibility |
-| --- | --- | --- | --- |
-| [All the Mods 10](https://www.curseforge.com/minecraft/modpacks/all-the-mods-10) | 1.21.1 NeoForge | 🟢 | 🟢 |
-| [Better MC [FABRIC] BMC3](https://www.curseforge.com/minecraft/modpacks/better-mc-fabric-bmc3) | 1.21.1 Fabric | 🟢 | 🟡 |
-| [All the Mods 9](https://www.curseforge.com/minecraft/modpacks/all-the-mods-9) | 1.20.1 Forge | 🟢 | 🟢 |
-| [落幕曲 Closing Song](https://www.mcmod.cn/modpack/1133.html) | 1.20.1 Forge | 🟢 | 🟢 |
-| [GregTech Odyssey](https://gtodyssey.com/) | 1.20.1 Forge | 🟢 | 🔴 |
-| [香草纪元：食旅纪行 VanillaEra: FaresChron](https://www.mcmod.cn/modpack/1095.html) | 1.20.1 Forge | 🟢 | 🟡 |
+| Modpack                                                                                        | Version / Loader | Mod Compatibility | Plugin Compatibility |
+| ---------------------------------------------------------------------------------------------- | ---------------- | ----------------- | -------------------- |
+| [All the Mods 10](https://www.curseforge.com/minecraft/modpacks/all-the-mods-10)               | 1.21.1 NeoForge  | 🟢                | 🟢                   |
+| [Better MC [FABRIC] BMC3](https://www.curseforge.com/minecraft/modpacks/better-mc-fabric-bmc3) | 1.21.1 Fabric    | 🟢                | 🟡                   |
+| [All the Mods 9](https://www.curseforge.com/minecraft/modpacks/all-the-mods-9)                 | 1.20.1 Forge     | 🟢                | 🟢                   |
+| [落幕曲 Closing Song](https://www.mcmod.cn/modpack/1133.html)                                  | 1.20.1 Forge     | 🟢                | 🟢                   |
+| [GregTech Odyssey](https://gtodyssey.com/)                                                     | 1.20.1 Forge     | 🟢                | 🔴                   |
+| [香草纪元：食旅纪行 VanillaEra: FaresChron](https://www.mcmod.cn/modpack/1095.html)            | 1.20.1 Forge     | 🟢                | 🟡                   |
 
 - 🟢 **Good Compatibility** — Works out of the box with no known conflicts.
 - 🟡 **Limited Compatibility** — Operable, but requires additional conditions (manual configuration changes, minor feature absences).

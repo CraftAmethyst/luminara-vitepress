@@ -4,11 +4,11 @@ This page documents the source code build, testing, and development specificatio
 
 ## Environment Requirements
 
-| Item | Requirement | Note |
-| --- | --- | --- |
-| Operating System | Linux / macOS / Windows | Supports Bash, PowerShell, and WSL |
-| JDK | 64-bit JDK `17` | Eclipse Temurin 17 or Zulu 17 recommended |
-| Git | 2.x or higher | Release build tasks rely on Git commit metadata |
+| Item               | Requirement                                     | Note                                                             |
+| ------------------ | ----------------------------------------------- | ---------------------------------------------------------------- |
+| Operating System   | Linux / macOS / Windows                         | Supports Bash, PowerShell, and WSL                               |
+| JDK                | 64-bit JDK `17`                                 | Eclipse Temurin 17 or Zulu 17 recommended                        |
+| Git                | 2.x or higher                                   | Release build tasks rely on Git commit metadata                  |
 | Network Connection | Access to Maven repositories and Forge services | Initial build requires downloading dependencies and Forge assets |
 
 ## Getting Source Code
@@ -72,6 +72,7 @@ The generated `.jar` is a standard Forge server mod. Simply place it into the `m
 ### Mod Convention Check (`verifyForgeModDistribution`)
 
 `verifyForgeModDistribution` unpacks the mod JAR after packaging and performs static whitelist/blacklist checks:
+
 - Verifies inclusion of metadata such as `META-INF/mods.toml`, `META-INF/accesstransformer.cfg`, and `META-INF/luminara-version.properties`.
 - Verifies inclusion of all core Mixin configurations (`mixins.arclight.core.json`, `bukkit.json`, `forge.json`, `compat.json`, `impl.forge.optimization.json`).
 - Verifies that the Manifest contains `MixinConnector: io.izzel.arclight.common.mod.ArclightConnector`.
@@ -86,6 +87,7 @@ Trials provides an integrated smoke test on a real Forge server environment:
 ```
 
 The `smokeServer` task automatically runs the following workflow:
+
 1. Downloads and installs a clean Forge Dedicated Server of the corresponding version.
 2. Mounts the built Luminara mod into `mods/`, injecting dedicated test mods (`smokeModJar`) and test Bukkit plugins (`smokePluginJar`).
 3. Launches the server process, monitors console output, and asserts critical milestones:

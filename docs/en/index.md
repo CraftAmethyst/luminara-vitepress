@@ -28,10 +28,10 @@ features:
 
 Luminara is a hybrid server mod developed based on Arclight. `stable/Trials` targets Minecraft `1.20.1`, Forge `47.x`, and Java `17`; `stable/FeudalKings` targets Minecraft `1.21.1`, supporting NeoForge and Fabric.
 
-| Branch | Minecraft | Server Platform | Java | CraftBukkit |
-| --- | --- | --- | --- | --- |
-| `stable/Trials` | `1.20.1` | Forge `47.x` | 17 | `v1_20_R1` |
-| `stable/FeudalKings` | `1.21.1` | NeoForge `21.1.x` or Fabric Loader `0.16.x` | 21 / 25 | `v1_21_R1` |
+| Branch               | Minecraft | Server Platform                             | Java    | CraftBukkit |
+| -------------------- | --------- | ------------------------------------------- | ------- | ----------- |
+| `stable/Trials`      | `1.20.1`  | Forge `47.x`                                | 17      | `v1_20_R1`  |
+| `stable/FeudalKings` | `1.21.1`  | NeoForge `21.1.x` or Fabric Loader `0.16.x` | 21 / 25 | `v1_21_R1`  |
 
 Select the corresponding branch entry point to start deployment:
 

@@ -11,12 +11,12 @@ description: Luminara stable/Trials 分支服主入口
 
 ### 适用环境
 
-| 项目 | 要求 |
-| --- | --- |
-| Minecraft | `1.20.1` |
-| Forge | `47.x`，生产环境建议按当前 Release 说明选择版本 |
-| Java | 64 位 Java `17` |
-| CraftBukkit | `v1_20_R1` |
+| 项目        | 要求                                            |
+| ----------- | ----------------------------------------------- |
+| Minecraft   | `1.20.1`                                        |
+| Forge       | `47.x`，生产环境建议按当前 Release 说明选择版本 |
+| Java        | 64 位 Java `17`                                 |
+| CraftBukkit | `v1_20_R1`                                      |
 
 ### 开始部署
 
