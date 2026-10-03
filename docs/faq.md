@@ -42,4 +42,4 @@
 
 ## 我该在哪里提问或报告 Bug？
 
-可先查看本 FAQ、配置页和兼容性页。可复现的 Luminara 缺陷请提交 [GitHub Issue](https://github.com/CraftAmethyst/Luminara/issues)，并附支持矩阵、最小 Mod/插件列表、完整日志、复现步骤和 `/luminara info` 输出。一般使用问题可到 [Discord](https://discord.gg/xn8KGphcvS) 或 QQ 群 `929252864` 讨论。
+可先查看本 FAQ、配置页和兼容性页。可复现的 Luminara 缺陷请提交 [GitHub Issue](https://github.com/CraftAmethyst/Luminara/issues)，并附支持矩阵、最小 Mod/插件列表、完整日志、复现步骤和 `/luminara info` 输出。一般使用问题可到 [Discord](https://discord.gg/xn8KGphcvS) 或 [QQ 群 929252864](https://qm.qq.com/q/5S00vXfQpq) 讨论。

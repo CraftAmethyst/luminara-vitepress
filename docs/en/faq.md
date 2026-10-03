@@ -42,4 +42,4 @@ First confirm that your Java 17, Minecraft 1.20.1, Forge 47.x, and Luminara buil
 
 ## Where can I ask questions or report bugs?
 
-Review this FAQ, the configuration guide, and the compatibility page first. For reproducible Luminara bugs, submit a [GitHub Issue](https://github.com/CraftAmethyst/Luminara/issues) including your support matrix, minimal mod/plugin list, full logs, reproduction steps, and the output of `/luminara info`. General usage questions can be discussed on [Discord](https://discord.gg/xn8KGphcvS) or in the QQ group `929252864`.
+Review this FAQ, the configuration guide, and the compatibility page first. For reproducible Luminara bugs, submit a [GitHub Issue](https://github.com/CraftAmethyst/Luminara/issues) including your support matrix, minimal mod/plugin list, full logs, reproduction steps, and the output of `/luminara info`. General usage questions can be discussed on [Discord](https://discord.gg/xn8KGphcvS) or in the [QQ group 929252864](https://qm.qq.com/q/5S00vXfQpq).

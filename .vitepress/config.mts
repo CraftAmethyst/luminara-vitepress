@@ -175,13 +175,44 @@ export default defineConfig({
         outline: { label: "On this page" },
         docFooter: { prev: "Previous page", next: "Next page" },
         lastUpdated: { text: "Last updated" },
+        socialLinks: [
+          {
+            icon: "github",
+            link: "https://github.com/CraftAmethyst/Luminara",
+            ariaLabel: "GitHub",
+          },
+          {
+            icon: "discord",
+            link: "https://discord.gg/xn8KGphcvS",
+            ariaLabel: "Discord (Global)",
+          },
+          {
+            icon: "qq",
+            link: "https://qm.qq.com/q/5S00vXfQpq",
+            ariaLabel: "QQ Group 929252864 (China Only)",
+          },
+        ],
       },
     },
   },
   themeConfig: {
     logo: { src: "/logo.png", alt: "Luminara" },
     socialLinks: [
-      { icon: "github", link: "https://github.com/CraftAmethyst/Luminara" },
+      {
+        icon: "github",
+        link: "https://github.com/CraftAmethyst/Luminara",
+        ariaLabel: "GitHub",
+      },
+      {
+        icon: "discord",
+        link: "https://discord.gg/xn8KGphcvS",
+        ariaLabel: "Discord（国际）",
+      },
+      {
+        icon: "qq",
+        link: "https://qm.qq.com/q/5S00vXfQpq",
+        ariaLabel: "QQ 群 929252864（仅中国）",
+      },
     ],
     search: {
       provider: "local",
