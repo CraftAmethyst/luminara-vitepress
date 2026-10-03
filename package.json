@@ -6,6 +6,6 @@
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
-    "docs:deploy": "vitepress build && wrangler pages deploy .vitepress/dist"
+    "docs:deploy": "vitepress build && wrangler pages deploy .vitepress/dist --project-name=luminara-docs"
   }
 }
