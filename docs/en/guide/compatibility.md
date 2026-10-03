@@ -1,6 +1,12 @@
 # Compatibility & Performance Suggestions
 
+Currently, no common hybrid server can guarantee absolute compatibility with every mod and plugin, and Luminara is no exception.
+
 Luminara loads both Forge mods and Bukkit/Spigot plugins simultaneously, but it is not a complete Paper implementation. Whether a plugin works depends on the APIs it uses, its assumptions about vanilla behavior, and whether it conflicts with mod modifications. When encountering problems, always reproduce them first in a minimal environment with only Luminara installed.
+
+Blindly stacking **too many** optimization mods rarely improves server performance—especially with the growing proliferation of "AI Slop" optimization mods, making it increasingly difficult to discern which ones are genuinely beneficial.
+
+To maximize server performance, see the `Optimization for Large Modpacks` section below.
 
 ## Known Incompatible Mods
 
@@ -18,17 +24,19 @@ This is not an exhaustive compatibility list. A plugin author's claim of "Paper 
 
 ## Optimization for Large Modpacks
 
-For large modpacks, we recommend starting with low-risk, general-purpose optimization mods:
+We define modpacks with `≥300` mods as large modpacks.
+
+For large modpacks, Luminara is explicitly compatible with only the following optimization mods:
 
 - [ModernFix](https://modrinth.com/mod/modernfix)
 - [FerriteCore](https://modrinth.com/mod/ferrite-core)
 - [Radium](https://modrinth.com/mod/radium)
 
-Under high exploration and chunk generation load, you may test [FastNoise](https://modrinth.com/mod/zfastnoise) and [FastChunkGen](https://www.curseforge.com/minecraft/mc-mods/fastchunkgen). Add only one component at a time and monitor MSPT, startup logs, and chunk generation metrics.
-
-Luminara's `optimization` options do not mean "turning everything on makes it fastest." Keep defaults initially, and tune settings individually only when facing clear bottlenecks with rollback-ready backups.
+Under high terrain generation and exploration load, you can try [FastNoise](https://modrinth.com/mod/zfastnoise) and [FastChunkGen](https://www.curseforge.com/minecraft/mc-mods/fastchunkgen).
 
 ## Small or Medium Modpacks
+
+We define modpacks with `≤299` mods as medium modpacks, and those with `≤150` mods as small modpacks.
 
 If you seek more aggressive performance patches, you can explore our downstream project [PRTS-SERVER](https://github.com/ElainAwa/PRTS-SERVER) (1.20.1 only; its 1.21.1 version is developed directly on Arclight, not Luminara). It is well-suited for small to medium modpacks; large modpacks are recommended to stay on Luminara.
 

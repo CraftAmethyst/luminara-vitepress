@@ -1,6 +1,12 @@
 # 兼容性与性能建议
 
+目前，常见的混合端都无法保证任何 Mod 与插件的绝对兼容，Luminara 也是如此。
+
 Luminara 同时加载 Forge 模组和 Bukkit/Spigot 插件，但不是完整 Paper 实现。插件是否可用取决于它使用的 API、对原版行为的假设，以及是否与模组修改冲突。遇到问题时先在只安装 Luminara 的最小环境复现。
+
+只是简单一味的堆砌 **过多的** 优化 Mod 通常无法提升服务器性能，尤其是现在越来越多 AI Slop 的优化 Mod 出现，使我们越来越难以甄别哪些优化 Mod 是有帮助的。 
+
+若要最大限度地提升服务器性能，可以往下看 `大型整合包的优化` 部分。
 
 ## 已知不兼容模组
 
@@ -18,17 +24,18 @@ Luminara 同时加载 Forge 模组和 Bukkit/Spigot 插件，但不是完整 Pap
 
 ## 大型整合包的优化
 
-对大型整合包，推荐从低风险的通用优化模组开始：
+我们将模组数量 `≥300` 的整合包定性为大型整合包
+
+对大型整合包，Luminara 只明确兼容以下几个优化 Mod：
 
 - [ModernFix](https://modrinth.com/mod/modernfix)
 - [FerriteCore](https://modrinth.com/mod/ferrite-core)
 - [Radium](https://modrinth.com/mod/radium)
 
-探索和区块生成负载较高时，可测试 [FastNoise](https://modrinth.com/mod/zfastnoise) 与 [FastChunkGen](https://www.curseforge.com/minecraft/mc-mods/fastchunkgen)。一次只增加一个组件并记录 MSPT、启动日志和区块生成表现。
-
-Luminara 的 `optimization` 选项不等于“全部打开就最快”。先保持默认值，在明确的瓶颈和可回滚备份下逐项调整。
-
+跑图生成负载较高时，可尝试 [FastNoise](https://modrinth.com/mod/zfastnoise) 与 [FastChunkGen](https://www.curseforge.com/minecraft/mc-mods/fastchunkgen)。
 ## 小型或中型整合包
+
+我们将模组数量 `≤299` 的整合包定性为中型整合包；模组数量 `≤150` 的定性为小型整合包。
 
 如果目标是更激进的性能补丁，可尝试我们的下游项目 [PRTS-SERVER](https://github.com/ElainAwa/PRTS-SERVER)（仅 1.20.1，此项目的 1.21.1 直接基于 Arclight 进行开发，不基于 Luminara）。它适合小型到中型整合包；大型整合包推荐留在 Luminara 。
 
